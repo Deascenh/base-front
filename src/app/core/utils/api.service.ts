@@ -105,6 +105,8 @@ export class ApiService {
 
     if (error.status >= 500 || error.status === 0) {
       message = 'Server error';
+    } else if (error.status === 401) {
+      message = 'Authentication issue';
     }
 
     this.snackBar.open(message, action, {
